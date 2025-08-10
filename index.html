@@ -15,6 +15,8 @@
             --secondary-highlight: #4dd0e1;
             --link-color: #b3e5fc;
             --link-hover: #e0f7fa;
+            --button-bg: rgba(255, 255, 255, 0.1);
+            --button-border: rgba(255, 255, 255, 0.2);
         }
 
         body {
@@ -164,10 +166,13 @@
             margin: 10px 0;
         }
 
-        .project-links {
+        .project-links,
+        .project-actions {
             margin-top: 20px;
             display: flex;
+            flex-wrap: wrap;
             gap: 15px;
+            align-items: center;
         }
 
         .project-links a {
@@ -185,6 +190,45 @@
 
         .icon {
             font-size: 1.2rem;
+        }
+        
+        .action-button {
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--button-border);
+        }
+
+        .action-button.deploy {
+            background: rgba(128, 222, 234, 0.2);
+            color: var(--highlight-color);
+        }
+
+        .action-button.deploy:hover {
+            background: rgba(128, 222, 234, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .action-button.fork {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-color);
+        }
+        
+        .action-button.fork:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -220,8 +264,13 @@
                 <p>
                     A next-generation WhatsApp bot designed to streamline your daily tasks. It features **integrated AIs** for seamless interaction, powerful media management, and advanced group administration capabilities. Andromeda XR is about pushing the boundaries of what a conversational assistant can do.
                 </p>
-                <div class="project-links">
-                    <a href="https://github.com/swtichedxp/Andromeda-xr" target="_blank"><i class="fab fa-github icon"></i> GitHub Repo</a>
+                <div class="project-actions">
+                    <a href="https://render.com/deploy?repo=https://github.com/swtichedxp/Andromeda-xr" target="_blank" class="action-button deploy">
+                        <i class="fas fa-rocket"></i> Deploy on Render
+                    </a>
+                    <a href="https://github.com/swtichedxp/Andromeda-xr/fork" target="_blank" class="action-button fork">
+                        <i class="fas fa-code-branch"></i> Fork Repo
+                    </a>
                 </div>
             </div>
             
@@ -230,6 +279,14 @@
                 <p>
                     A powerful WhatsApp bot focused on making tasks effortless. Nova XD provides a suite of tools for **media management** and **group administration**, all powered by integrated AI to ensure a smooth and intuitive user experience.
                 </p>
+                <div class="project-actions">
+                     <a href="https://render.com/deploy?repo=https://github.com/swtichedxp/Nova-" target="_blank" class="action-button deploy">
+                        <i class="fas fa-rocket"></i> Deploy on Render
+                    </a>
+                    <a href="https://github.com/swtichedxp/Nova-/fork" target="_blank" class="action-button fork">
+                        <i class="fas fa-code-branch"></i> Fork Repo
+                    </a>
+                </div>
             </div>
         </section>
         
